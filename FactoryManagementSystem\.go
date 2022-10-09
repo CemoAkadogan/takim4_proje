@@ -72,45 +72,40 @@ func main() {
 			typePortable: false,
 		},
 		{
-			name:     "Chair",
-			idNumber: 1,
-
+			name:         "Chair",
+			idNumber:     1,
 			width:        35,
 			heigth:       96,
 			length:       41,
 			typePortable: true,
 		},
 		{
-			name:     "Table",
-			idNumber: 2,
-
+			name:         "Table",
+			idNumber:     2,
 			width:        80,
 			heigth:       75,
 			length:       140,
 			typePortable: true,
 		},
 		{
-			name:     "Wardrobe",
-			idNumber: 3,
-
+			name:         "Wardrobe",
+			idNumber:     3,
 			width:        50,
 			heigth:       190,
 			length:       210,
 			typePortable: false,
 		},
 		{
-			name:     "Coffee Table",
-			idNumber: 4,
-
+			name:         "Coffee Table",
+			idNumber:     4,
 			width:        50,
 			heigth:       42,
 			length:       50,
 			typePortable: true,
 		},
 		{
-			name:     "TV Unit",
-			idNumber: 5,
-
+			name:         "TV Unit",
+			idNumber:     5,
 			width:        35,
 			heigth:       50,
 			length:       180,
@@ -208,6 +203,135 @@ func main() {
 			unitPrice: 27,
 		},
 	}
+	kitchenSet := []furniture{
+		{
+			name:         "Table",
+			idNumber:     2,
+			width:        80,
+			heigth:       75,
+			length:       140,
+			typePortable: true,
+		},
+		{
+			name:         "Chair",
+			idNumber:     1,
+			width:        35,
+			heigth:       96,
+			length:       41,
+			typePortable: true,
+		},
+	}
+	livingRoomSet := []furniture{
+		{
+			name:         "Seat",
+			idNumber:     0,
+			width:        90,
+			heigth:       50,
+			length:       110,
+			typePortable: false,
+		},
+		{
+			name:         "Chair",
+			idNumber:     1,
+			width:        35,
+			heigth:       96,
+			length:       41,
+			typePortable: true,
+		},
+		{
+			name:         "Table",
+			idNumber:     2,
+			width:        80,
+			heigth:       75,
+			length:       140,
+			typePortable: true,
+		},
+		{
+			name:         "Coffee Table",
+			idNumber:     4,
+			width:        50,
+			heigth:       42,
+			length:       50,
+			typePortable: true,
+		},
+		{
+			name:         "TV Unit",
+			idNumber:     5,
+			width:        35,
+			heigth:       50,
+			length:       180,
+			typePortable: false,
+		},
+	}
+	bedRoomSet := []furniture{
+		{
+			name:         "Bed",
+			idNumber:     6,
+			width:        80,
+			heigth:       50,
+			length:       200,
+			typePortable: false,
+		},
+		{
+			name:         "Wardrobe",
+			idNumber:     3,
+			width:        50,
+			heigth:       190,
+			length:       210,
+			typePortable: false,
+		},
+		{
+			name:         "Nightstand",
+			idNumber:     7,
+			width:        40,
+			heigth:       50,
+			length:       40,
+			typePortable: true,
+		},
+	}
+	childrensRoom := []furniture{
+		{
+			name:         "Bed",
+			idNumber:     6,
+			width:        80,
+			heigth:       50,
+			length:       200,
+			typePortable: false,
+		},
+		{
+			name:         "Wardrobe",
+			idNumber:     3,
+			width:        50,
+			heigth:       190,
+			length:       210,
+			typePortable: false,
+		},
+		{
+			name:         "Nightstand",
+			idNumber:     7,
+			width:        40,
+			heigth:       50,
+			length:       40,
+			typePortable: true,
+		},
+		{
+			name:         "Desk",
+			idNumber:     8,
+			width:        80,
+			heigth:       75,
+			length:       140,
+			typePortable: true,
+		},
+		{
+			name:         "Chair",
+			idNumber:     1,
+			width:        35,
+			heigth:       96,
+			length:       41,
+			typePortable: true,
+		},
+	}
+
 	for {
 		for {
 			var firstChoose string
