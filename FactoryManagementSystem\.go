@@ -37,27 +37,6 @@ func progressBar() {
 
 }
 
-func factorySize() { // farkli girdirlerde error aliniyor duzenlenebilir, error vermesini veya 0 degeri cikarmasini engelleyerek tekrar kullanicidan veri alinmali
-	var factorySizeScan string
-	var factorySize int
-	var numberOfWorkers int
-	fmt.Println("Fabrikanızın boyutununu giriniz.[küçük , orta , büyük ]")
-	// Fabrika boyutlari kullanicidan alinirken belli calisan sayisi araliklari ve metre kare degerleri alinip sonra if de islenebilir
-	fmt.Scanf("%s", &factorySizeScan)
-	if factorySizeScan == "küçük" {
-		numberOfWorkers = 5
-		factorySize = 300
-	} else if factorySizeScan == "orta" {
-		numberOfWorkers = 10
-		factorySize = 750
-	} else if factorySizeScan == "büyük" {
-		numberOfWorkers = 15
-		factorySize = 1250
-	}
-	fmt.Println("Fabrikada Çalışan Sayısı ", numberOfWorkers, "\nFabrika Boyutunuz ", factorySize, "m2")
-
-}
-
 func main() {
 	// sonsuz dongu
 
@@ -72,43 +51,57 @@ func main() {
 			typePortable: false,
 		},
 		{
-			name:         "Chair",
-			idNumber:     1,
+			name:     "Chair",
+			idNumber: 1,
+
 			width:        35,
 			heigth:       96,
 			length:       41,
 			typePortable: true,
 		},
+
 		{
-			name:         "Table",
-			idNumber:     2,
+			name:     "Table",
+			idNumber: 2,
+
 			width:        80,
 			heigth:       75,
 			length:       140,
 			typePortable: true,
 		},
 		{
-			name:         "Wardrobe",
-			idNumber:     3,
+			name:     "Wardrobe",
+			idNumber: 3,
+
 			width:        50,
 			heigth:       190,
 			length:       210,
 			typePortable: false,
 		},
 		{
-			name:         "Coffee Table",
-			idNumber:     4,
+			name:     "Coffee Table",
+			idNumber: 4,
+
 			width:        50,
 			heigth:       42,
 			length:       50,
 			typePortable: true,
 		},
 		{
-			name:         "TV Unit",
-			idNumber:     5,
+			name:     "TV Unit",
+			idNumber: 5,
+
 			width:        35,
 			heigth:       50,
 			length:       180,
+			typePortable: false,
+		},
+		{
+			name:         "Bed",
+			idNumber:     6,
+			width:        80,
+			heigth:       50,
+			length:       200,
 			typePortable: false,
 		},
 	}
@@ -203,138 +196,8 @@ func main() {
 			unitPrice: 27,
 		},
 	}
-	kitchenSet := []furniture{
-		{
-			name:         "Table",
-			idNumber:     2,
-			width:        80,
-			heigth:       75,
-			length:       140,
-			typePortable: true,
-		},
-		{
-			name:         "Chair",
-			idNumber:     1,
-			width:        35,
-			heigth:       96,
-			length:       41,
-			typePortable: true,
-		},
-	}
-	livingRoomSet := []furniture{
-		{
-			name:         "Seat",
-			idNumber:     0,
-			width:        90,
-			heigth:       50,
-			length:       110,
-			typePortable: false,
-		},
-		{
-			name:         "Chair",
-			idNumber:     1,
-			width:        35,
-			heigth:       96,
-			length:       41,
-			typePortable: true,
-		},
-		{
-			name:         "Table",
-			idNumber:     2,
-			width:        80,
-			heigth:       75,
-			length:       140,
-			typePortable: true,
-		},
-		{
-			name:         "Coffee Table",
-			idNumber:     4,
-			width:        50,
-			heigth:       42,
-			length:       50,
-			typePortable: true,
-		},
-		{
-			name:         "TV Unit",
-			idNumber:     5,
-			width:        35,
-			heigth:       50,
-			length:       180,
-			typePortable: false,
-		},
-	}
-	bedRoomSet := []furniture{
-		{
-			name:         "Bed",
-			idNumber:     6,
-			width:        80,
-			heigth:       50,
-			length:       200,
-			typePortable: false,
-		},
-		{
-			name:         "Wardrobe",
-			idNumber:     3,
-			width:        50,
-			heigth:       190,
-			length:       210,
-			typePortable: false,
-		},
-		{
-			name:         "Nightstand",
-			idNumber:     7,
-			width:        40,
-			heigth:       50,
-			length:       40,
-			typePortable: true,
-		},
-	}
-	childrensRoom := []furniture{
-		{
-			name:         "Bed",
-			idNumber:     6,
-			width:        80,
-			heigth:       50,
-			length:       200,
-			typePortable: false,
-		},
-		{
-			name:         "Wardrobe",
-			idNumber:     3,
-			width:        50,
-			heigth:       190,
-			length:       210,
-			typePortable: false,
-		},
-		{
-			name:         "Nightstand",
-			idNumber:     7,
-			width:        40,
-			heigth:       50,
-			length:       40,
-			typePortable: true,
-		},
-		{
-			name:         "Desk",
-			idNumber:     8,
-			width:        80,
-			heigth:       75,
-			length:       140,
-			typePortable: true,
-		},
-		{
-			name:         "Chair",
-			idNumber:     1,
-			width:        35,
-			heigth:       96,
-			length:       41,
-			typePortable: true,
-		},
-	}
-
 	for {
 		for {
-			var firstChoose string
 			var chosenFurniture furniture
 			var chosenPaint matter
 			var chosenMaterial matter
@@ -342,123 +205,122 @@ func main() {
 			var chosenMaterialID int
 			var chosenPaintID int
 
-			fmt.Println("You can choose a single furniture or a set of furnitures :")
+			furnitureSliceShow(furnitureS)
 			fmt.Println("  ")
-			fmt.Println("For single furniture press 'F' , for a set of furnitures press 'S'")
-			for (firstChoose != "f") || (firstChoose != "F") || (firstChoose != "S") || (firstChoose != "s") {
-				fmt.Scan(&firstChoose)
-				if (firstChoose == "f") || (firstChoose == "F") || (firstChoose == "S") || (firstChoose == "s") {
+			fmt.Println("Choose one of this furnitures to customize")
+			fmt.Println("  ")
+			for {
+				fmt.Scan(&chosenFurnitureID)
+				if (chosenFurnitureID > len(furnitureS)) || (chosenFurnitureID <= 0) {
+					fmt.Println("Please enter a vailed valu for ID number:")
+
+				} else {
+					break
+				}
+
+			} // mobilya ID secimi icin gereken hatasiz for sonu
+			// mobilya secimi ve eslemesi yapildi
+			var membersNumber int = 0
+			for furnitureS[membersNumber].idNumber != chosenFurnitureID {
+				if furnitureS[membersNumber].idNumber == chosenFurnitureID {
+					furnitureS[membersNumber] = chosenFurniture
+
+				}
+				membersNumber++
+
+			}
+
+			chosenFurniture = furnitureS[membersNumber]
+			chosenFurniture.showFurniture()
+			// maddesini ve boyasini kullanici girecek
+			fmt.Println("  ")
+
+			fmt.Println(" ")
+			matterSliceShow(paints)
+			fmt.Println("Enter the paint ID number of the paint you want ")
+			var mambersofPaintsNumbers int
+			// dogru girdi alinacak ve ID paint icin alinmis olacak
+			for {
+				fmt.Scan(&chosenPaintID)
+				if (chosenPaintID > len(paints)) || (chosenPaintID <= 0) {
+					fmt.Println("Please enter a true value for ID number:")
+
+				} else {
 					break
 				}
 
 			}
+			// alinan id slice ile karsilastirilip boya tespit edilecek
+			for paints[mambersofPaintsNumbers].idNumber != chosenPaintID {
+				if paints[mambersofPaintsNumbers].idNumber == chosenPaintID {
 
-			if (firstChoose == "F") || (firstChoose == "f") {
+				}
+				mambersofPaintsNumbers++
 
-				furnitureSliceShow(furnitureS)
-				fmt.Println("  ")
-				fmt.Println("Choose one of this furnitures to customize")
-				fmt.Println("  ")
-				for {
-					fmt.Scan(&chosenFurnitureID)
-					if (chosenFurnitureID > len(furnitureS)) || (chosenFurnitureID <= 0) {
-						fmt.Println("Please enter a vailed valu for ID number:")
+			}
+			// alinan id secilen boyayla esitlenecek
+			chosenPaint = paints[mambersofPaintsNumbers]
+			chosenFurniture.color = chosenPaint
+			fmt.Println(" ")
+			fmt.Println(" ")
+			// materyal secimi yaptirilacak
+			fmt.Println("***** MATERIALS*****")
+			fmt.Println(" ")
 
-					} else {
-						break
-					}
+			var memberNumberofMaterials int
 
-				} // mobilya ID secimi icin gereken hatasiz for sonu
-				// mobilya secimi ve eslemesi yapildi
-				var membersNumber int = 0
-				for furnitureS[membersNumber].idNumber != chosenFurnitureID {
-					if furnitureS[membersNumber].idNumber == chosenFurnitureID {
-						furnitureS[membersNumber] = chosenFurniture
+			fmt.Println(" ")
+			matterSliceShow(materials)
+			fmt.Println(" ")
+			fmt.Println("Chose one of the materials you want :")
+			for {
+				fmt.Scan(&chosenMaterialID)
+				if (chosenMaterialID > len(materials)) || (chosenMaterialID <= 0) {
+					fmt.Println("Please enter a true valu for ID number:")
 
-					}
-					membersNumber++
+				} else {
+					break
+				}
+
+			}
+			for materials[memberNumberofMaterials].idNumber != chosenMaterialID {
+				if materials[memberNumberofMaterials].idNumber == chosenMaterialID {
 
 				}
 
-				chosenFurniture = furnitureS[membersNumber]
-				chosenFurniture.showFurniture()
-				// maddesini ve boyasini kullanici girecek
-				fmt.Println("  ")
+				memberNumberofMaterials++
 
-				fmt.Println(" ")
-				matterSliceShow(paints)
-				fmt.Println("Enter the paint ID number of the paint you want ")
-				var mambersofPaintsNumbers int
-				// dogru girdi alinacak ve ID paint icin alinmis olacak
-				for {
-					fmt.Scan(&chosenPaintID)
-					if (chosenPaintID > len(paints)) || (chosenPaintID <= 0) {
-						fmt.Println("Please enter a true value for ID number:")
+			}
+			chosenMaterial = materials[memberNumberofMaterials]
+			chosenFurniture.material = chosenMaterial
+			fmt.Println("  ")
+			fmt.Println("  ")
+			fmt.Println("Furniture you have costumized :")
+			chosenFurniture.showFurniture()
+			fmt.Println("The price of the ", chosenFurniture.name, "is :", priceCalculator(chosenFurniture))
 
-					} else {
-						break
-					}
+			var neededMaterial float32
+			neededMaterial = chosenFurniture.heigth * chosenFurniture.length * chosenFurniture.width / 1000
+			if (chosenFurniture.color.stock < neededMaterial) || (chosenFurniture.material.stock < neededMaterial) {
+				fmt.Println("There is not enough material for production, there is gonig to be a order procces. ")
+				progressBar()
+				fmt.Println("Order completed your order will be ready in 24 hours.")
+				chosenFurniture.color.stock = chosenFurniture.color.stock + neededMaterial
+				chosenFurniture.material.stock = chosenFurniture.material.stock + neededMaterial
 
-				}
-				// alinan id slice ile karsilastirilip boya tespit edilecek
-				for paints[mambersofPaintsNumbers].idNumber != chosenPaintID {
-					if paints[mambersofPaintsNumbers].idNumber == chosenPaintID {
+			}
+			chosenFurniture.color.stock = chosenFurniture.color.stock - neededMaterial
+			chosenFurniture.material.stock = chosenFurniture.material.stock - neededMaterial
+			fmt.Println(chosenFurniture.color.stock)
+			progressBar()
 
-					}
-					mambersofPaintsNumbers++
+		} // Furniture sectiyse burasai calisacak
 
-				}
-				// alinan id secilen boyayla esitlenecek
-				chosenPaint = paints[mambersofPaintsNumbers]
-				chosenFurniture.color = chosenPaint
-				fmt.Println(" ")
-				fmt.Println(" ")
-				// materyal secimi yaptirilacak
-				fmt.Println("***** MATERIALS*****")
-				fmt.Println(" ")
-
-				var memberNumberofMaterials int
-
-				fmt.Println(" ")
-				matterSliceShow(materials)
-				fmt.Println(" ")
-				fmt.Println("Chose one of the materials you want :")
-				for {
-					fmt.Scan(&chosenMaterialID)
-					if (chosenMaterialID > len(materials)) || (chosenMaterialID <= 0) {
-						fmt.Println("Please enter a true valu for ID number:")
-
-					} else {
-						break
-					}
-
-				}
-				for materials[memberNumberofMaterials].idNumber != chosenMaterialID {
-					if materials[memberNumberofMaterials].idNumber == chosenMaterialID {
-
-					}
-
-					memberNumberofMaterials++
-
-				}
-				chosenMaterial = materials[memberNumberofMaterials]
-				chosenFurniture.material = chosenMaterial
-				fmt.Println("  ")
-				fmt.Println("  ")
-				fmt.Println("Furniture you have costumized :")
-				chosenFurniture.showFurniture()
-				fmt.Println("The price of the ", chosenFurniture.name, "is :", priceCalculator(chosenFurniture))
-				orderProgres(chosenFurniture)
-				fmt.Println(chosenFurniture.material.stock)
-				fmt.Println(chosenFurniture.color.stock)
-			} // Furniture sectiyse burasai calisacak
-
-		}
-
-	}
-	// ctrl c harici calismaya devam etmesi icin
+	} // iner for loop
 
 }
+
+// ctrl c harici calismaya devam etmesi icin
 
 func (furn furniture) showFurniture() {
 	fmt.Println("Furniture name  : ", furn.name)
@@ -558,3 +420,5 @@ func priceCalculator(furn furniture) float32 {
 
 	return price
 }
+
+// how to write a struct includes a slice
